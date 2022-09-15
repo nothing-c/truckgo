@@ -1,0 +1,41 @@
+#+TITLE: truckgo: A C Build System
+
+* Inspiration
+Cargo is cool, and it kinda sucks that its Rust-only
+
+* Usage
+truckgo [command] [options]
+** Commands
+*** help - print help + version info
+*** new - new directory
+new [directory name] [options: version-control system, compiler]
+*** build - compile
+build [release | extra options]
+Builds are debug by default, use release to generate stripped and fast 
+builds
+Use extra options for cross-compilation and other customizations
+*** run - compile + run
+
+* Directory Hierarchy
+** Main folder
+.git
+.gitignore
+*** src/
+main.c
+Your various source files
+*** gen/
+**** debug/
+The debug executable
+**** release/
+The release executable
+
+* Config
+** ~/.truckgo
+CC=[compiler]
+DEBUG=[debug compiler flags]
+RELEASE=[release compiler flags]
+** Defaults
+CC: gcc
+DEBUG: -Wall -Wextra -Werror -std=c99 -pedantic -g -fstack-protector
+RELEASE: -Wall -std=c99 -O2
+
