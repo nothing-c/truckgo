@@ -39,3 +39,8 @@ CC: gcc
 DEBUG: -Wall -Wextra -Werror -std=c99 -pedantic -g -fstack-protector
 RELEASE: -Wall -std=c99 -O2
 
+* Installation
+Set the path to the config file in truckgo.h
+Run "make install"
+Move the executable to somewhere in your $PATH
+
